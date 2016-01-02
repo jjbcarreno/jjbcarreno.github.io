@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First steps with Ring"
+title:  "Ring tutorial 1 : Hello World app"
 date:   2016-01-01 18:00:00
 categories: ring clojure
 ---
@@ -53,8 +53,12 @@ Here is an piece of code (in src/myproject/core.clj):
 ;; defonce will run a jetty server once evaluated
 ;; :join option is used to ensure that current thread blocks 
 ;; until server is loaded. 
-(defonce server (jetty/run-jetty #'myApp {:port 8080 :join? false}))
+(defonce server (jetty/run-jetty myApp {:port 8080 :join? false}))
 {% endhighlight %}
+
+One ring handler called **myApp** has been defined. This is nothing but a function that takes a request and that 
+returns a map containing predefined keys like :status, :headers and :body.
+Then, a jetty server is defined (once). It takes **myApp** as a handler and is configured to run on port 8080.
 
 Now, to run that example and test our web application, a repl can be used.
 Just go to project root folder and run 'lein repl'. You should see the following.
@@ -71,7 +75,12 @@ Java HotSpot(TM) 64-Bit Server VM 1.8.0_45-b14
  Javadoc: (javadoc java-object-or-class-here)
     Exit: Control+D or (exit) or (quit)
  Results: Stored in vars *1, *2, *3, an exception in *e
+{% endhighlight %}
 
+Repl is launched. By just using **myproject.core** namespace, jetty server function is evaluated, thus starting jetty instance 
+automatically.
+
+{% highlight bash %}
 user=> (use 'myproject.core)
 2016-01-02 08:57:13.420:INFO::nREPL-worker-0: Logging initialized @20703ms
 2016-01-02 08:57:13.468:INFO:oejs.Server:nREPL-worker-0: jetty-9.2.10.v20150310
@@ -80,5 +89,10 @@ user=> (use 'myproject.core)
 nil
 {% endhighlight %}
 
+That's it. You can now test your web application.
+{% highlight bash %}
+$ curl http://localhost:8080
+<h1>Hello World</h1>
+{% endhighlight %}
 
 
