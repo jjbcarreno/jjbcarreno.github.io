@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ring tutorial 1 : Hello World app"
+title:  "Introducing Ring for Clojure"
 date:   2016-01-01 18:00:00
 categories: ring clojure
 ---
