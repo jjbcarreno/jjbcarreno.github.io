@@ -14,5 +14,5 @@ This tutorial will only rely on Ring framework to implement a very simple login 
 
 ## Step one : Understanding wrappers
 A wrapper enables to decorate a handler with new features.
-![ring wrapper]({{ site.url }}/assets/ring-wrapper.png)
+![ring wrapper]({{ site.url }}/assets/ring-wrapper.png = 200x)
 
