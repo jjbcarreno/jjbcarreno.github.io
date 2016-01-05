@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ring tutorial : simple login form"
-date:   2016-01-02 18:00:00
+date:   2016-01-04 18:00:00
 categories: ring clojure
 ---
 ## About this tutorial
